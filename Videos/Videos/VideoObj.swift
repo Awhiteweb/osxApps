@@ -8,7 +8,13 @@
 
 import Foundation
 
-class VideoObj
-{
-    
+struct Video {
+
+    let id: Int
+    let title: String
+    var genre: String
+    var group: String
+    var episode: Int
+    var season: Int
+
 }
