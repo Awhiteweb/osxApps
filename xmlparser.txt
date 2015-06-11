@@ -1,0 +1,69 @@
+﻿
+let titles = [ String ]( "video", "id", "title", "location", "genre", "group", "episode", "season" )
+var videos = [Video]()
+var element: String = ""
+var stringBuilder: String = ""
+var id:Int = 0, title: String = "", location: String = "", genre: String = "", group: String = "", episode: Int = 0, season: Int = 0
+
+let url = URL( "http://www.whiteslife.com/database.php" )
+
+var xmlParser = NSXMLParser( contentsOfURL: url )
+
+// start of element
+func parser( parser: NSXMLParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: [NSObject : AnyObject]! )
+{
+	
+	element = elementName
+	switch element
+		case title[0]:
+		case title[1]:
+		case title[2]:
+		case title[3]:
+		case title[4]:
+		case title[5]:
+		default:
+
+}
+
+// string builder on element
+func parser(parser: NSXMLParser!, foundCharacters string: String!)
+{
+	switch element
+	{
+		case title[1...5]:
+			stringBuilder.appendString(string)
+		default:
+			break
+	} 
+}
+
+// end of element
+func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!)
+{
+	switch element
+		case title[0]:
+			let video = Video( id: id, title: title, location: location, genre: genre, group: group, episode: episode, season: season )
+			video.append(video)
+		case title[1]:
+			id = stringBuilder.toInt()
+		case title[2]:
+			title = stringBuilder
+		case title[3]:
+			location = stringBuilder
+		case title[4]:
+			genre = stringBuilder
+		case title[5]:
+			group = stringBuilder
+		case title[6]:
+			if count(stringBuilder) < 1
+				episode = 0
+			else
+				episode = stringBuilder.toInt()
+		case title[7]:
+			if count(stringBuilder) < 1
+				season = 0
+			else
+				season  = stringBuilder.toInt()
+		default:
+
+}
