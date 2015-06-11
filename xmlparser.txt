@@ -10,7 +10,7 @@ let url = URL( "http://www.whiteslife.com/database.php" )
 var xmlParser = NSXMLParser( contentsOfURL: url )
 
 // start of element
-func parser( parser: NSXMLParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: [NSObject : AnyObject]! )
+func parser( parser: xmlParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: [NSObject : AnyObject]! )
 {
 	
 	element = elementName
@@ -26,7 +26,7 @@ func parser( parser: NSXMLParser!, didStartElement elementName: String!, namespa
 }
 
 // string builder on element
-func parser(parser: NSXMLParser!, foundCharacters string: String!)
+func parser(parser: xmlParser!, foundCharacters string: String!)
 {
 	switch element
 	{
@@ -38,7 +38,7 @@ func parser(parser: NSXMLParser!, foundCharacters string: String!)
 }
 
 // end of element
-func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!)
+func parser(parser: xmlParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!)
 {
 	switch element
 		case title[0]:
@@ -63,7 +63,7 @@ func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceU
 			if count(stringBuilder) < 1
 				season = 0
 			else
-				season  = stringBuilder.toInt()
+				season = stringBuilder.toInt()
 		default:
 
 }
