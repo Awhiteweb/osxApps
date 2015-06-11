@@ -14,6 +14,7 @@
 		FA2E452B1B1657BA00E0C0D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2E45291B1657BA00E0C0D7 /* LaunchScreen.xib */; };
 		FA2E45371B1657BA00E0C0D7 /* VideosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2E45361B1657BA00E0C0D7 /* VideosTests.swift */; };
 		FA2E45411B165CAC00E0C0D7 /* VideoObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2E45401B165CAC00E0C0D7 /* VideoObj.swift */; };
+		FAF3C5711B2A2D510022980A /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3C5701B2A2D510022980A /* XMLParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,8 @@
 		FA2E45351B1657BA00E0C0D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA2E45361B1657BA00E0C0D7 /* VideosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosTests.swift; sourceTree = "<group>"; };
 		FA2E45401B165CAC00E0C0D7 /* VideoObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoObj.swift; sourceTree = "<group>"; };
+		FAF3C56F1B2A22690022980A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		FAF3C5701B2A2D510022980A /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +84,13 @@
 			children = (
 				FA2E45201B1657BA00E0C0D7 /* AppDelegate.swift */,
 				FA2E45221B1657BA00E0C0D7 /* ViewController.swift */,
+				FAF3C5701B2A2D510022980A /* XMLParser.swift */,
 				FA2E45241B1657BA00E0C0D7 /* Main.storyboard */,
 				FA2E45271B1657BA00E0C0D7 /* Images.xcassets */,
 				FA2E45291B1657BA00E0C0D7 /* LaunchScreen.xib */,
 				FA2E451E1B1657BA00E0C0D7 /* Supporting Files */,
 				FA2E45401B165CAC00E0C0D7 /* VideoObj.swift */,
+				FAF3C56F1B2A22690022980A /* MyPlayground.playground */,
 			);
 			path = Videos;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF3C5711B2A2D510022980A /* XMLParser.swift in Sources */,
 				FA2E45231B1657BA00E0C0D7 /* ViewController.swift in Sources */,
 				FA2E45411B165CAC00E0C0D7 /* VideoObj.swift in Sources */,
 				FA2E45211B1657BA00E0C0D7 /* AppDelegate.swift in Sources */,
@@ -415,6 +421,7 @@
 				FA2E453C1B1657BA00E0C0D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA2E453D1B1657BA00E0C0D7 /* Build configuration list for PBXNativeTarget "VideosTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +430,7 @@
 				FA2E453F1B1657BA00E0C0D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

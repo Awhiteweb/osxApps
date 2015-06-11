@@ -1,15 +1,15 @@
 //
-//  ViewController.swift
+//  XMLParser.swift
 //  Videos
 //
-//  Created by Alex on 27/05/2015.
+//  Created by Alex on 11/06/2015.
 //  Copyright (c) 2015 Alex. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController, UITableViewDataSource, NSXMLParserDelegate
-{
+class XMLParser: NSObject, NSXMLParserDelegate {
+
     let titles = [ String ]( arrayLiteral: "video", "id", "title", "location", "genre", "group", "episode", "season" )
     var videos = [Int: Video]()
     var element: String = ""
@@ -90,34 +90,6 @@ class ViewController: UIViewController, UITableViewDataSource, NSXMLParserDelega
         stringBuilder = ""
         element = ""
     }
-    
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
-    {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        return 0
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-    }
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
 }
-

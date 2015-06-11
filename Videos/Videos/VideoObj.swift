@@ -12,6 +12,7 @@ struct Video {
 
     let id: Int
     let title: String
+    let location: String
     var genre: String
     var group: String
     var episode: Int

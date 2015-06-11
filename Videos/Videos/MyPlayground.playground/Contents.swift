@@ -1,15 +1,15 @@
-//
-//  ViewController.swift
-//  Videos
-//
-//  Created by Alex on 27/05/2015.
-//  Copyright (c) 2015 Alex. All rights reserved.
-//
+import Foundation
 
-import UIKit
+struct Video {
+    let id: Int
+    let title: String
+    let location: String
+    var genre: String
+    var group: String
+    var episode: Int
+    var season: Int
+}
 
-class ViewController: UIViewController, UITableViewDataSource, NSXMLParserDelegate
-{
     let titles = [ String ]( arrayLiteral: "video", "id", "title", "location", "genre", "group", "episode", "season" )
     var videos = [Int: Video]()
     var element: String = ""
@@ -23,12 +23,9 @@ class ViewController: UIViewController, UITableViewDataSource, NSXMLParserDelega
     var vSeason: Int = 0
     var parser: NSXMLParser
     
-    func beginparsing()
-    {
-        parser = NSXMLParser( contentsOfURL: NSURL(string: "http://www.whiteslife.com/database.php") )!
-        parser.delegate = self
-        parser.parse()
-    }
+    parser = NSXMLParser( contentsOfURL: NSURL(string: "http://localhost/~Alex/database.php") )!
+    parser.parse()
+
     
     // start of element
     func parser( parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject] )
@@ -90,34 +87,3 @@ class ViewController: UIViewController, UITableViewDataSource, NSXMLParserDelega
         stringBuilder = ""
         element = ""
     }
-    
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
-    {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        return 0
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-    }
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
-}
-
