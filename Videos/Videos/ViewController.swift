@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, NSXMLParserDelegate
 {
     let titles = [ String ]( arrayLiteral: "video", "id", "title", "location", "genre", "group", "episode", "season" )
-    var videos = [Int: Video]()
+    var videos = [ Video ]()
     var element: String = ""
     var stringBuilder: String = ""
     var vId:Int = 0
@@ -55,7 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource, NSXMLParserDelega
         {
         case "video":
             let video = Video( id: vId, title: vTitle, location: vLocation, genre: vGenre, group: vGroup, episode: vEpisode, season: vSeason )
-            videos[vId] = video
+            videos.append( video )
         case "id":
             vId = stringBuilder.toInt()!
         case "title":
@@ -99,11 +99,19 @@ class ViewController: UIViewController, UITableViewDataSource, NSXMLParserDelega
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 0
+        return videos.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        var cell:  UITableViewCell! = tableView.dequeReusableCellWithIdentifier("Cell") as UITableViewCell
+        if cell == nil
+        {
+        	cell = NSBundle.mainBundle().loadNibNamed("Cell", owner: self, options: nil)[0] as IUTableViewCell
+    	}
+    	
+    	cell.textLabel?.text = videos[indexPath.row].title
+    	
+    	return cell as UITableViewCell
     }
     
     override func viewDidLoad()
