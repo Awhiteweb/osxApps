@@ -1,0 +1,9 @@
+﻿UPDATE `main` SET `title` = REPLACE(`title`, "&", '&amp;') WHERE `title` LIKE "%&%";
+UPDATE `main` SET `path` = REPLACE(`path`, "&", '&amp;') WHERE `path` LIKE "%&%";
+UPDATE `main` SET `title` = REPLACE(`title`, "'", '&apos;') WHERE `title` LIKE "%'%";
+UPDATE `main` SET `path` = REPLACE(`path`, "'", '&apos;') WHERE `path` LIKE "%'%";
+UPDATE `main` SET `title` ='15 The One Where Ross And Rachel...You Know' WHERE `id` = 3227;
+UPDATE `groups` SET `group` = REPLACE(`group`, "&", '&amp;') WHERE `group` LIKE "%&%";
+UPDATE `groups` SET `group` = REPLACE(`group`, "'", '&apos;') WHERE `group` LIKE "%'%";
+UPDATE `genres` SET `genre` = REPLACE(`genre`, "&", '&amp;') WHERE `genre` LIKE "%&%";
+UPDATE `genres` SET `genre` = REPLACE(`genre`, "'", '&apos;') WHERE `genre` LIKE "%'%";
